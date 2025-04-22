@@ -1,18 +1,25 @@
-## Getting Started
+# Pesquisa Sequencial em Java
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Implementação de um sistema de pesquisa sequencial em vetor de objetos `Show`, utilizando o título como chave primária de pesquisa.
 
-## Folder Structure
+## 📋 Descrição do Projeto
 
-The workspace contains two folders by default, where:
+Este projeto consiste em:
+1. Carregar registros de shows em um vetor
+2. Realizar pesquisas sequenciais pelos títulos
+3. Gerar um arquivo de log com métricas de desempenho
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## 📝 Especificações
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+### Entrada
+- **Primeira parte**: Igual à entrada da primeira questão (registros de shows)
+- **Segunda parte**: 
+  - Linhas com títulos a pesquisar
+  - Última linha contém "FIM"
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+### Saída
+- Linhas com "SIM" ou "NAO" indicando se cada título foi encontrado
+- Arquivo de log `matricula_sequencial.txt` contendo:
+  - Matrícula do aluno
+  - Tempo de execução (em milissegundos)
+  - Número de comparações realizadas

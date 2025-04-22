@@ -1,18 +1,24 @@
-## Getting Started
+# Ordenação por Seleção em Java
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Implementação do algoritmo de ordenação por seleção para vetores de objetos `Show`, utilizando o título como chave de ordenação.
 
-## Folder Structure
+## 📋 Descrição do Projeto
 
-The workspace contains two folders by default, where:
+Este projeto implementa:
+1. Carregamento de registros de shows em um vetor
+2. Ordenação dos registros pelo título usando selection sort
+3. Geração de um arquivo de log com métricas de desempenho
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## 📝 Especificações Técnicas
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+### 📥 Entrada
+- Formato idêntico ao da primeira questão (registros de shows)
+- Última linha contém "FIM"
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+### 📤 Saída
+- Registros ordenados lexicograficamente pelo título
+- Arquivo de log `matricula_selecao.txt` contendo:
+  - Matrícula do aluno
+  - Número de comparações
+  - Número de movimentações
+  - Tempo de execução

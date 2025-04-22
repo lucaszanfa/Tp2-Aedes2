@@ -1,48 +1,37 @@
-## Questão 01
+# Classe Show - Implementação em Java
 
-Crie uma classe Show seguindo todas as regras apresentadas no slide unidade00L_conceitosBasicos_introducaoOO.pdf.
+Esta classe representa um show (série ou filme) com seus atributos básicos e métodos necessários para manipulação.
 
-Atributos privados:
-show_id: String
+## 📋 Atributos da Classe
 
-type: String
+| Atributo       | Tipo       | Descrição                          |
+|----------------|------------|------------------------------------|
+| `show_id`      | String     | Identificador único do show        |
+| `type`         | String     | Tipo (Série ou Filme)              |
+| `title`        | String     | Título                             |
+| `director`     | String     | Diretor(es)                        |
+| `cast`         | String[]   | Elenco principal                   |
+| `country`      | String     | País de origem                     |
+| `date_added`   | Date       | Data de adição à plataforma        |
+| `release_year` | int        | Ano de lançamento                  |
+| `rating`       | String     | Classificação etária               |
+| `duration`     | String     | Duração                            |
+| `listed_in`    | String[]   | Gêneros/Categorias                 |
 
-title: String
+### Construtores
+- `Show()` - Construtor padrão
+- `Show(String show_id, String type, ...)` - Construtor com parâmetros
 
-director: String
+### Métodos de Acesso
+- Getters e setters para todos os atributos
 
-cast: String[]
+### Funcionalidades
+- `clone()`: Retorna uma cópia do objeto
+- `imprimir()`: Exibe os atributos formatados
+- `ler()`: Carrega dados de um arquivo
 
-country: String
+## ⚠️ Tratamento de Dados
+- Valores faltantes são substituídos por `"NaN"`
+- Arrays vazios são inicializados corretamente
+- Datas são validadas
 
-date_added: Date
-
-release_year: int
-
-rating: String
-
-duration: String
-
-listed_in: String[]
-
-Métodos exigidos:
-Construtores (pelo menos dois)
-
-Métodos get e set
-
-clone
-
-imprimir
-
-ler
-
-Detalhes importantes:
-O método imprimir deve mostrar os atributos do registro (seguindo o modelo de saída padrão).
-
-O método ler lê os atributos do registro a partir de um arquivo de entrada.
-
-Atenção: Alguns registros podem ter valores faltando, que devem ser substituídos por NaN.
-
-A entrada padrão contém várias linhas, cada uma com um número inteiro indicando o show_id a ser lido.
-
-A última linha da entrada é a palavra FIM.

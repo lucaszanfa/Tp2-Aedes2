@@ -1,18 +1,48 @@
-## Getting Started
+## Questão 01
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Crie uma classe Show seguindo todas as regras apresentadas no slide unidade00L_conceitosBasicos_introducaoOO.pdf.
 
-## Folder Structure
+Atributos privados:
+show_id: String
 
-The workspace contains two folders by default, where:
+type: String
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+title: String
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+director: String
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+cast: String[]
 
-## Dependency Management
+country: String
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+date_added: Date
+
+release_year: int
+
+rating: String
+
+duration: String
+
+listed_in: String[]
+
+Métodos exigidos:
+Construtores (pelo menos dois)
+
+Métodos get e set
+
+clone
+
+imprimir
+
+ler
+
+Detalhes importantes:
+O método imprimir deve mostrar os atributos do registro (seguindo o modelo de saída padrão).
+
+O método ler lê os atributos do registro a partir de um arquivo de entrada.
+
+Atenção: Alguns registros podem ter valores faltando, que devem ser substituídos por NaN.
+
+A entrada padrão contém várias linhas, cada uma com um número inteiro indicando o show_id a ser lido.
+
+A última linha da entrada é a palavra FIM.

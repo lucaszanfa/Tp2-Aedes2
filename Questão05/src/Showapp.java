@@ -289,23 +289,61 @@ class Show {
         }
         listedInStr.append("]");
         
-        System.out.println("=> " + this.id + " ## " + 
-                        this.title + " ## " + 
-                        this.type + " ## " + 
-                        this.director + " ## " + 
-                        castStr.toString() + " ## " + 
-                        this.country + " ## " + 
-                        dateStr + " ## " + 
-                        this.releaseYear + " ## " + 
-                        this.rating + " ## " + 
-                        this.duration + " ## " + 
-                        listedInStr.toString());
+        if (castStr.length() == 2) { // se estiver vazio: "[]"
+        castStr = new StringBuilder("[NaN]");
+    }
+    
+    System.out.println("=> " + this.id + " ## " + 
+                       this.title + " ## " + 
+                       this.type + " ## " + 
+                       this.director + " ## " + 
+                       castStr.toString() + " ## " + 
+                       this.country + " ## " + 
+                       dateStr + " ## " + 
+                       this.releaseYear + " ## " + 
+                       this.rating + " ## " + 
+                       this.duration + " ## " + 
+                       listedInStr.toString() + " ##");
+    
+
+    }
+
+    public static void ordenacaoporselecao(Show[] catalogo) {
+        long startTime = System.nanoTime();
+        int comparacoes = 0;
+
+        for (int i = 0; i < catalogo.length - 1; i++) {
+            int menor = i;
+            for (int j = i + 1; j < catalogo.length; j++) {
+                comparacoes++;
+                if (catalogo[menor].getTitle().compareTo(catalogo[j].getTitle()) > 0) {
+                    menor = j;
+                }
+            }
+            swap(catalogo, menor, i);
+        }
+
+        long endTime = System.nanoTime();
+        long duration = endTime - startTime;
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("847522_sequencial.txt"))) {
+            writer.write("847522\t" + duration / 1_000_000.0 + "ms\t" + comparacoes);
+        } catch (IOException e) {
+            System.err.println("Erro ao escrever o arquivo de log.");
+        }
+    }
+
+    private static void swap(Show[] catalogo, int i, int j) {
+        Show temp = catalogo[i];
+        catalogo[i] = catalogo[j];
+        catalogo[j] = temp;
     }
 }
 
-public class Showapp {
+class Showapp {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        List<Show> lista = new ArrayList<>();
 
         try {
             String line;
@@ -313,15 +351,23 @@ public class Showapp {
                 Show show = new Show();
                 try {
                     show.ler(line);
-                    show.imprimir();
+                    lista.add(show.clone());
                 } catch (Exception e) {
-                    System.out.println("Erro ao ler o show: " + e.getMessage());
+                    System.out.println("Erro: " + e.getMessage());
                 }
             }
+
+            // Ordenação por seleção
+            Show[] catalogo = lista.toArray(new Show[0]);
+            Show.ordenacaoporselecao(catalogo);
+            for (Show s : catalogo) {
+                s.imprimir();
+            }
+
         } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            sc.close();
+            System.out.println("Erro geral: " + e.getMessage());
         }
+
+        sc.close();
     }
 }

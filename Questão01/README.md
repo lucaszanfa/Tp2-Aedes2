@@ -1,18 +1,37 @@
-## Getting Started
+# Classe Show - Implementação em Java
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Esta classe representa um show (série ou filme) com seus atributos básicos e métodos necessários para manipulação.
 
-## Folder Structure
+## 📋 Atributos da Classe
 
-The workspace contains two folders by default, where:
+| Atributo       | Tipo       | Descrição                          |
+|----------------|------------|------------------------------------|
+| `show_id`      | String     | Identificador único do show        |
+| `type`         | String     | Tipo (Série ou Filme)              |
+| `title`        | String     | Título                             |
+| `director`     | String     | Diretor(es)                        |
+| `cast`         | String[]   | Elenco principal                   |
+| `country`      | String     | País de origem                     |
+| `date_added`   | Date       | Data de adição à plataforma        |
+| `release_year` | int        | Ano de lançamento                  |
+| `rating`       | String     | Classificação etária               |
+| `duration`     | String     | Duração                            |
+| `listed_in`    | String[]   | Gêneros/Categorias                 |
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+### Construtores
+- `Show()` - Construtor padrão
+- `Show(String show_id, String type, ...)` - Construtor com parâmetros
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+### Métodos de Acesso
+- Getters e setters para todos os atributos
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+### Funcionalidades
+- `clone()`: Retorna uma cópia do objeto
+- `imprimir()`: Exibe os atributos formatados
+- `ler()`: Carrega dados de um arquivo
 
-## Dependency Management
+## ⚠️ Tratamento de Dados
+- Valores faltantes são substituídos por `"NaN"`
+- Arrays vazios são inicializados corretamente
+- Datas são validadas
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).

@@ -4,5 +4,5 @@ Repositório destinado ao **Trabalho Prático 2** da disciplina de Algoritmos e 
 
 ## Linguagens Utilizadas
 
-- [Linguagem C]
-- [Linguagem JAVA]
+- [C]
+- [JAVA]
